@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-# runserver :  'scrapy crawl thespider'
-# save file in csv format : 'scrapy crawl thespider -o book.csv'
 import scrapy
 
 pages = int(input('How Many Pages Do You Want to Scrape: '))
+# pages = 1
 dictonary = {'One': 1, 'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5}
 
 
