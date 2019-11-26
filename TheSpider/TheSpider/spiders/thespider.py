@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import scrapy
 
-pages = int(input('How Many Pages Do You Want to Scrape: '))
-# pages = 1
+# pages = int(input('How Many Pages Do You Want to Scrape: '))
+pages = 1
 dictonary = {'One': 1, 'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5}
 
 

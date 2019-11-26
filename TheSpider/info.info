@@ -1,9 +1,13 @@
 Scrapy infos:
+---------------------
 
-1. for http request: scrapyrt
-2. runserver :  'scrapy crawl thespider'
-3. save file in csv format : 'scrapy crawl thespider -o book.csv'
-4. request url : http://127.0.0.1:9080/crawl.json?spider_name=books&start_requests=true
+1. For http request: scrapyrt
+2. Runserver :  'scrapy crawl thespider'
+3. Save file in csv format : 'scrapy crawl thespider -o book.csv'
+4. Request url : http://127.0.0.1:9080/crawl.json?spider_name=books&start_requests=true
 
 # Project start
 scrapy start project name
+
+# Shell
+scrapy shell 'website_name'
