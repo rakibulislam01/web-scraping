@@ -18,3 +18,10 @@ class QuoteItem(scrapy.Item):
     title = scrapy.Field()
     author = scrapy.Field()
     tag = scrapy.Field()
+
+
+class AmazonItem(scrapy.Item):
+    product_name = scrapy.Field()
+    product_author = scrapy.Field()
+    product_price = scrapy.Field()
+    product_imagelink = scrapy.Field()

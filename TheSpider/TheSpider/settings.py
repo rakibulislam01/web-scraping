@@ -16,6 +16,7 @@ NEWSPIDER_MODULE = 'TheSpider.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'TheSpider (+http://www.yourdomain.com)'
+# USER_AGENT = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -54,6 +55,11 @@ ROBOTSTXT_OBEY = False
 # DOWNLOADER_MIDDLEWARES = {
 #    'TheSpider.middlewares.ThespiderDownloaderMiddleware': 543,
 # }
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
