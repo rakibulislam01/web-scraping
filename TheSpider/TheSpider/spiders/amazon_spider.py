@@ -2,8 +2,9 @@ import scrapy
 from ..items import AmazonItem
 
 
-class QuotesSpider(scrapy.Spider):
+class AmazonSpider(scrapy.Spider):
     name = 'amazon'
+    page_number = 2
     start_urls = [
         'https://www.amazon.com/Books-Last-30-days/s?rh=n%3A283155%2Cp_n_publication_date%3A1250226011'
     ]
@@ -22,3 +23,10 @@ class QuotesSpider(scrapy.Spider):
         items['product_imagelink'] = product_imagelink
 
         yield items
+
+        next_page = 'https://www.amazon.com/Books-Last-30-days/s?i=stripbooks&rh=n%3A283155%2Cp_n_publication_date' \
+                    '%3A1250226011&page='+str(AmazonSpider.page_number)+'&qid=1575487589&ref=sr_pg_2 '
+        if AmazonSpider.page_number < 10:
+            AmazonSpider.page_number += 1
+            yield response.follow(next_page, callback=self.parse)
+

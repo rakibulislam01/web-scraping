@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'TheSpider.spiders'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-PROXY_POOL_ENABLED = True
+# PROXY_POOL_ENABLED = True
 
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
@@ -59,18 +59,18 @@ PROXY_POOL_ENABLED = True
 # }
 
 # for useragent middlewares
-# DOWNLOADER_MIDDLEWARES = {
-#     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-#     'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
-# }
-
-# for proxy middlewares
 DOWNLOADER_MIDDLEWARES = {
-    # ...
-    'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
-    'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
-    # ...
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
 }
+
+# # for proxy middlewares
+# DOWNLOADER_MIDDLEWARES = {
+#     # ...
+#     'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
+#     'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
+#     # ...
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -81,9 +81,9 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'TheSpider.pipelines.ThespiderPipeline': 400,
-   'TheSpider.pipelines.QuotesPipeline': 300,
-   'TheSpider.pipelines.AmazonPipeline': 600,
+    'TheSpider.pipelines.AmazonPipeline': 600,
+    'TheSpider.pipelines.ThespiderPipeline': 400,
+    # 'TheSpider.pipelines.QuotesPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
