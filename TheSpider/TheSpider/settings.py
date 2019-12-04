@@ -81,8 +81,9 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'TheSpider.pipelines.ThespiderPipeline': 200,
+   'TheSpider.pipelines.ThespiderPipeline': 400,
    'TheSpider.pipelines.QuotesPipeline': 300,
+   'TheSpider.pipelines.AmazonPipeline': 600,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
